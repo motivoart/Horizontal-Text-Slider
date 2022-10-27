@@ -1,0 +1,52 @@
+.section-names {
+    overflow: hidden;
+    position: relative;
+    padding: 75px 0 40px;
+
+
+    .names {
+        position: relative;
+
+        &__row {
+            display: flex;
+            align-items: baseline;
+            white-space: nowrap;
+            width: max-content;
+            transition: all 0.3s 0.1s ease-in-out;
+            opacity: 0;
+
+            &.active {
+                opacity: 1;
+            }
+
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+
+        &__item {
+            white-space: nowrap;
+            padding-left: 24px;
+            color: #000000;
+            letter-spacing: -0.04em;
+            line-height: 1em;
+            cursor: default;
+            transition: color 0.3s ease-in-out;
+            font-size: 26px;
+
+            @for $i from 1 through 5 {
+
+                &.size-#{$i} {
+                    font-size: #{26 + $i * 12}px;
+                }
+            }
+
+            &:hover,
+            &:focus-within {
+                color: $color__beta;
+            }
+        }
+
+    }
+
+}
